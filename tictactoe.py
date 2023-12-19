@@ -1,4 +1,4 @@
-# Pam Qian 2016 Fall CS 112 Python Midterm Project II
+
 # Tic Tack Toe 
 
 import random
@@ -9,14 +9,13 @@ def main():
     board = create_grid()
     pretty = printPretty(board)
     symbol_1, symbol_2 = sym()
-    full = isFull(board, symbol_1, symbol_2) # The function that starts the game is also in here.
+    full = isFull(board, symbol_1, symbol_2)
     
 
     
 
 
 def intro():
-# This function introduces the rules of the game Tic Tac Toe
     print("Hello! Welcome to the Tic Tac Toe game!")
     print("\n")
     print("Rules: Player 1 and Player 2 use C and S, take turns "
@@ -68,7 +67,7 @@ def startGamming(board, symbol_1, symbol_2, count):
                        "[left column: enter 0, middle column: enter 1, right column enter 2]"))
 
 
-    # Check if players' selection is out of range
+
     while (row > 2 or row < 0) or (column > 2 or column < 0):
         outOfBoard(row, column)
         row = int(input("Pick a row[upper row:"
@@ -114,19 +113,18 @@ def isFull(board, symbol_1, symbol_2):
     if winner == False:
         print("Game over.")
         
-    # This is function gives a report 
+
     report(count, winner, symbol_1, symbol_2)
 
 
 
 def outOfBoard(row, column):
-# This function tells the players that their selection is out of range
     print("Out of boarder. Pick another one. ")
     
     
 
 def printPretty(board):
-# This function prints the board nice!
+# This function prints the board 
     rows = len(board)
     cols = len(board)
     print("---+---+---")
@@ -138,9 +136,9 @@ def printPretty(board):
 
 
 def isWinner(board, symbol_1, symbol_2, count):
-# This function checks if any winner is winning
+
     winner = True
-    # Check the rows
+
     for row in range (0, 3):
         if (board[row][0] == board[row][1] == board[row][2] == symbol_1):
             winner = False
@@ -151,7 +149,7 @@ def isWinner(board, symbol_1, symbol_2, count):
             print("Player " + symbol_2 + ", you won!")
             
             
-    # Check the columns
+
     for col in range (0, 3):
         if (board[0][col] == board[1][col] == board[2][col] == symbol_1):
             winner = False
@@ -160,7 +158,7 @@ def isWinner(board, symbol_1, symbol_2, count):
             winner = False
             print("Player " + symbol_2 + ", you won!")
 
-    # Check the diagnoals
+
     if board[0][0] == board[1][1] == board[2][2] == symbol_1:
         winner = False 
         print("Player " + symbol_1 + ", you won!")
@@ -195,6 +193,6 @@ def report(count, winner, symbol_1, symbol_2):
     else:
         print("There is a tie!!!!!! ")
 
-# Call Main
+
 main()
 
